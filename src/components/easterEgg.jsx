@@ -1,7 +1,7 @@
 import { logEvent } from "firebase/analytics";
 import { Manager, Tap } from "hammerjs";
 import { AnimatedSprite, Application, Assets } from "pixi.js";
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useReducer, useRef } from "react";
 import { APPLICATION_CONTEXT } from "../lib/application";
 
 const RACCOON = {
@@ -95,7 +95,6 @@ const scaleFactor =
  */
 export const EasterEgg = (props) => {
   const app = useContext(APPLICATION_CONTEXT);
-  const [enabled, setEnabled] = useState(false);
   const audioRef = useRef();
   const pixiRef = useRef();
   const fallAssetRef = useRef();
@@ -114,6 +113,10 @@ export const EasterEgg = (props) => {
 
   const pxAppRef = useRef();
   const deviceMotionCaptured = useRef(false);
+
+  const [enabled, setEnabled] = useReducer((state) => {
+    return !state;
+  }, false);
 
   const toggleAgentState = () => {
     // We want to use other state here based on the duration the agent
@@ -170,7 +173,7 @@ export const EasterEgg = (props) => {
       idleAssetRef.current = await Assets.loadBundle("idle");
       walkAssetRef.current = await Assets.loadBundle("walk");
       agentStateRef.current.status = "";
-      agentStateRef.current.nextStatus = "running";
+      agentStateRef.current.nextStatus = "walk";
       agentStateRef.current.sprite = new AnimatedSprite(
         Object.values(runAssetRef.current)
       );
@@ -275,7 +278,7 @@ export const EasterEgg = (props) => {
               agentStateRef.current.sprite.scale.x
             );
           }
-          agentStateRef.current.sprite.x += velocity * 0.12;
+          agentStateRef.current.sprite.x += velocity * 0.2;
           break;
         case "fall":
           break;
@@ -380,10 +383,7 @@ export const EasterEgg = (props) => {
     mc.add(new Tap({ event: "quadrupletap", taps: 4 }));
     mc.on("quadrupletap", () => {
       console.log("🏳️ Quadriple click activated!");
-      setEnabled((e) => {
-        console.log('was', e)
-        return !enabled;
-      });
+      setEnabled(!enabled);
     });
     setupMotionListener();
 
@@ -418,12 +418,13 @@ export const EasterEgg = (props) => {
         // because PIXI is stateful and we do not want to endup storing
         // unnecessary events.
         pxAppRef.current.ticker.minFPS = 50;
-
+        pxAppRef.current.ticker.start();
         pixiRef.current.classList.remove("hidden");
         pixiRef.current.appendChild(pxAppRef.current.view);
       }
     } else {
       stopAudio();
+      pxAppRef.current.ticker.stop();
       pixiRef.current.classList.add("hidden");
       if (hasPixiView) {
         pixiRef.current.removeChild(pxAppRef.current.view);
@@ -458,7 +459,7 @@ export const EasterEgg = (props) => {
         />
         Your browser does not support the audio element.
       </audio>
-      <div className="absolute h-full w-full top-0 hidden" ref={pixiRef} />
+      <div className="animate__animated animate__heartBeat absolute h-full w-full top-0 hidden" ref={pixiRef} />
     </div>
   );
 };
