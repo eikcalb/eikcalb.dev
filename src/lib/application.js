@@ -40,6 +40,17 @@ class Application {
     initialize() {
         this.fBase = initializeApp(Application.firebaseConfig);
         this.fBaseAnalytics = getAnalytics(this.fBase);
+
+        // We want to listen to system mode events
+        window.matchMedia("(prefers-color-scheme: dark)").onchange = (ev) => {
+            if (!("theme" in localStorage)) {
+                if (ev.matches) {
+                    document.documentElement.classList.add("dark");
+                } else {
+                    document.documentElement.classList.remove("dark");
+                }
+            }
+        };
     }
 
     SetUser(user) {

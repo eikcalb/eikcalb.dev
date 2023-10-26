@@ -369,7 +369,7 @@ export const EasterEgg = (props) => {
         autoDensity: true,
         backgroundAlpha: 0,
         resizeTo: global.window,
-        resolution: global.devicePixelRatio,
+        resolution: global.devicePixelRatio * 2,
         height: global.innerHeight,
         width: global.innerWidth,
         sharedTicker: true,

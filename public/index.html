@@ -24,6 +24,7 @@
     -->
   <title>%REACT_APP_NAME%</title>
   <script type="text/javascript">
+    // This is to prevent FOUC. Application logic will include a listener for this.
     if (
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
