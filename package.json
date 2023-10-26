@@ -10,7 +10,10 @@
     "bulma": "^0.9.4",
     "dayjs": "^1.11.10",
     "dexie": "^3.2.4",
+    "firebase": "^10.5.0",
+    "hammerjs": "^2.0.8",
     "localforage": "^1.10.0",
+    "pixi.js": "^7.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
@@ -19,6 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "tailwind": "npx tailwindcss -i ./src/index.css -o ./src/App.css --watch",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

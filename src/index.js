@@ -1,3 +1,5 @@
+import 'bulma/css/bulma.min.css';
+import 'animate.css/animate.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';

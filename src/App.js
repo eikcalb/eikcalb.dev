@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Suspense, lazy } from "react";
+import "./App.css";
+import { ApplicationContextProvider } from "./lib/application";
+import { Loading } from "./components/loading";
+
+const Header = lazy(() => import("./components/header"));
+const Body = lazy(() => import("./components/easterEgg"));
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>{process.env.REACT_APP_NAME}</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Suspense fallback={Loading}>
+            <ApplicationContextProvider>
+                <Header />
+                <Body />
+            </ApplicationContextProvider>
+        </Suspense>
+    );
 }
 
 export default App;
