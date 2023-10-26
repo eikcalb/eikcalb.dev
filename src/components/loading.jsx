@@ -3,7 +3,7 @@ export const Loading = () => {
 
   return (
     <svg
-      className="bg-slate dark:bg-slate-950 h-full"
+      className="bg-slate dark:bg-slate-950 h-full w-screen"
       version="1.1"
       id="L5"
       x="0px"

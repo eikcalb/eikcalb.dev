@@ -1,6 +1,7 @@
 import { getAnalytics, logEvent } from "firebase/analytics";
-import { initializeApp } from 'firebase/app';
-import { createContext } from "react";
+import { initializeApp } from "firebase/app";
+import { createContext, useState } from "react";
+import { Loading } from "../components/loading";
 
 /**
  * This application provides a portfolio page for the user specified.
@@ -16,20 +17,24 @@ class Application {
         messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
         appId: process.env.REACT_APP_FIREBASE_APP_ID,
         measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
-      };
+    };
 
     author = process.env.REACT_APP_AUTHOR;
     authorEmail = process.env.REACT_APP_EMAIL;
+    easterEgg = false;
     user;
+
+    // Public methods
+    SetLoading = (loading) => {};
 
     constructor(name, version) {
         this.name = name ?? process.env.REACT_APP_NAME;
         this.version = version ?? process.env.REACT_APP_VERSION;
 
         this.initialize();
-        logEvent(this.fBaseAnalytics, 'page_view', {
+        logEvent(this.fBaseAnalytics, "page_view", {
             page_location: global.location.href,
-        })
+        });
     }
 
     initialize() {
@@ -56,9 +61,18 @@ const theApp = new Application();
 export const APPLICATION_CONTEXT = createContext(theApp);
 
 export const ApplicationContextProvider = (props) => {
+    const [loading, setLoading] = useState(false);
+
+    theApp.SetLoading = setLoading;
+
     return (
         <APPLICATION_CONTEXT.Provider value={theApp}>
             {props.children}
+            {loading ? (
+                <div className="absolute flex z-50 top-0 left-0 right-0 h-full">
+                    <Loading />
+                </div>
+            ) : null}
         </APPLICATION_CONTEXT.Provider>
     );
 };
