@@ -118,6 +118,7 @@ export const DEFAULT_USER = new User({
         { name: "Azure" },
         { name: "Bazel" },
         { name: "C++" },
+        { name: "C#" },
         { name: "Celery" },
         { name: "Docker" },
         { name: "Firebase" },
