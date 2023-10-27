@@ -11,7 +11,7 @@ export const Skills = () => {
       {app.user.skills
         .sort((a, b) => a.name.localeCompare(b.name))
         .map((skill) => (
-          <span className="inline-flex px-5 py-1 m-auto flex-grow text-base flex-grow-1 text-center text-slate-200">
+          <span className="inline-flex px-5 py-1 m-auto flex-grow text-base flex-grow-1 text-center text-slate-800 dark:text-slate-200">
             {skill.name}
           </span>
         ))}
