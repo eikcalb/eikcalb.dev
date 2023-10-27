@@ -116,6 +116,7 @@ export const DEFAULT_USER = new User({
         { name: "Angular" },
         { name: "AWS" },
         { name: "Azure" },
+        { name: "Bazel" },
         { name: "C++" },
         { name: "Celery" },
         { name: "Docker" },
