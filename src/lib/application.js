@@ -2,6 +2,7 @@ import { getAnalytics, logEvent } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
 import { createContext, useState } from "react";
 import { Loading } from "../components/loading";
+import { DEFAULT_USER } from "./user";
 
 /**
  * This application provides a portfolio page for the user specified.
@@ -21,7 +22,6 @@ class Application {
 
     author = process.env.REACT_APP_AUTHOR;
     authorEmail = process.env.REACT_APP_EMAIL;
-    easterEgg = false;
     user;
 
     // Public methods
@@ -41,6 +41,13 @@ class Application {
         this.fBase = initializeApp(Application.firebaseConfig);
         this.fBaseAnalytics = getAnalytics(this.fBase);
 
+        // We want to check the theme color would be set appropriately.
+        // If the theme is set in `localStorage`, we want to update the
+        // browser.
+        if ("theme" in localStorage) {
+            this.updateBrowserThemeColor(localStorage.theme === "dark");
+        }
+
         // We want to listen to system mode events
         window.matchMedia("(prefers-color-scheme: dark)").onchange = (ev) => {
             if (!("theme" in localStorage)) {
@@ -49,8 +56,16 @@ class Application {
                 } else {
                     document.documentElement.classList.remove("dark");
                 }
+                this.updateBrowserThemeColor(ev.matches);
             }
         };
+    }
+
+    updateBrowserThemeColor(dark = true) {
+        const meta = global.document.querySelector('meta[name="theme-color"]');
+        if (meta) {
+            meta.setAttribute("content", dark ? "#020617" : "#f8fafc");
+        }
     }
 
     SetUser(user) {
@@ -61,14 +76,18 @@ class Application {
         if (active) {
             document.documentElement.classList.add("dark");
             localStorage.theme = "dark";
+            this.updateBrowserThemeColor(true);
             return;
         }
         document.documentElement.classList.remove("dark");
         localStorage.theme = "light";
+        this.updateBrowserThemeColor(false);
     }
 }
 
 const theApp = new Application();
+theApp.SetUser(DEFAULT_USER);
+
 export const APPLICATION_CONTEXT = createContext(theApp);
 
 export const ApplicationContextProvider = (props) => {

@@ -173,7 +173,7 @@ export const EasterEgg = (props) => {
       idleAssetRef.current = await Assets.loadBundle("idle");
       walkAssetRef.current = await Assets.loadBundle("walk");
       agentStateRef.current.status = "";
-      agentStateRef.current.nextStatus = "walk";
+      agentStateRef.current.nextStatus = "running";
       agentStateRef.current.sprite = new AnimatedSprite(
         Object.values(runAssetRef.current)
       );
@@ -199,7 +199,7 @@ export const EasterEgg = (props) => {
       pxAppRef.current.stage.addChild(agentStateRef.current.sprite);
       pxAppRef.current.ticker.add(render);
       agentStateRef.current.setup = true;
-      console.log("Successfully loaded assets!", agentStateRef.current.setup);
+      console.log("Successfully loaded assets!");
     } catch (e) {
       console.log("Failed to load assets!", e);
       setEnabled(false);
@@ -442,7 +442,6 @@ export const EasterEgg = (props) => {
     };
   }, [enabled, handleDeviceMotion, pxAppRef, setupMotionListener]);
 
-  console.log(enabled);
   return (
     <div>
       {props.children}

@@ -4,14 +4,21 @@ import { ApplicationContextProvider } from "./lib/application";
 import { Loading } from "./components/loading";
 
 const Header = lazy(() => import("./components/header"));
-const Body = lazy(() => import("./components/easterEgg"));
+const EasterEgg = lazy(() => import("./components/easterEgg"));
+const Body = lazy(() => import("./components/body"));
+const Footer = lazy(() => import("./components/footer"));
+const Skills = lazy(() => import("./components/skills"));
 
 function App() {
     return (
         <Suspense fallback={Loading}>
             <ApplicationContextProvider>
                 <Header />
-                <Body />
+                <Skills />
+                <EasterEgg>
+                    <Body />
+                </EasterEgg>
+                <Footer />
             </ApplicationContextProvider>
         </Suspense>
     );
