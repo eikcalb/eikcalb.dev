@@ -60,7 +60,7 @@ export const DEFAULT_USER = new User({
         // Personal projects
         {
             name: "eikcalb.dev",
-            description: `This is my personal homepage which will continue to be developed and will be the victim for any web technology I intend investigating. I have created an easter egg inside. Tap the page 4 times or shake your phone to activate.`,
+            description: `This is my personal homepage which will continue to be developed and will be the victim for any web technology I intend investigating. I have created an easter egg inside. Tap the page 4 times to toggle this feature.`,
             icon: `${process.env.PUBLIC_URL}/asset/homepage.png`,
             link: "https://eikcalb.dev/",
             experimental: true,

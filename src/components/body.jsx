@@ -11,7 +11,7 @@ export const ProjectCard = ({
   experimental,
 }) => {
   return (
-    <div className="w-full rounded-xl overflow-hidden shadow-lg dark:shadow-none dark:bg-slate-700">
+    <div className="w-full rounded-xl dark:border dark:border-slate-700/10 overflow-hidden shadow-lg dark:shadow-none dark:bg-slate-700">
       {icon ? <img className="w-full" src={icon} alt={name} /> : null}
       <div className="px-4 py-4 space-y-4">
         <div className="text-slate-800 dark:text-slate-200 font-bold text-xl">

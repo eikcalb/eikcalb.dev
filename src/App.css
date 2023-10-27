@@ -651,33 +651,13 @@ video {
   margin-right: auto;
 }
 
-.me-2 {
-  -webkit-margin-end: 0.5rem;
-          margin-inline-end: 0.5rem;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
-.mb-12 {
-  margin-bottom: 3rem;
-}
-
-.mb-16 {
-  margin-bottom: 4rem;
-}
-
 .mb-20 {
   margin-bottom: 5rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
-.inline {
-  display: inline;
+.me-2 {
+  -webkit-margin-end: 0.5rem;
+          margin-inline-end: 0.5rem;
 }
 
 .flex {
@@ -718,12 +698,12 @@ video {
   flex: 1 1 0%;
 }
 
-.flex-grow-0 {
-  flex-grow: 0;
-}
-
 .flex-grow {
   flex-grow: 1;
+}
+
+.flex-grow-0 {
+  flex-grow: 0;
 }
 
 .transform {
@@ -738,10 +718,6 @@ video {
 
 .flex-col {
   flex-direction: column;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
 }
 
 .items-center {
@@ -824,10 +800,6 @@ video {
   border-bottom-width: 1px;
 }
 
-.border-t {
-  border-top-width: 1px;
-}
-
 .border-neutral-500\/20 {
   border-color: rgb(115 115 115 / 0.2);
 }
@@ -897,6 +869,11 @@ video {
   padding-right: 1rem;
 }
 
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -927,14 +904,8 @@ video {
   padding-bottom: 2rem;
 }
 
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+.pb-24 {
+  padding-bottom: 6rem;
 }
 
 .pb-32 {
@@ -943,18 +914,6 @@ video {
 
 .pb-4 {
   padding-bottom: 1rem;
-}
-
-.pb-20 {
-  padding-bottom: 5rem;
-}
-
-.pb-28 {
-  padding-bottom: 7rem;
-}
-
-.pb-24 {
-  padding-bottom: 6rem;
 }
 
 .pt-8 {
@@ -1148,8 +1107,29 @@ video {
   color: rgb(30 41 59 / var(--tw-text-opacity));
 }
 
+:is(.dark .dark\:border) {
+  border-width: 1px;
+}
+
 :is(.dark .dark\:border-none) {
   border-style: none;
+}
+
+:is(.dark .dark\:border-slate-600) {
+  --tw-border-opacity: 1;
+  border-color: rgb(71 85 105 / var(--tw-border-opacity));
+}
+
+:is(.dark .dark\:border-slate-500\/20) {
+  border-color: rgb(100 116 139 / 0.2);
+}
+
+:is(.dark .dark\:border-slate-700\/20) {
+  border-color: rgb(51 65 85 / 0.2);
+}
+
+:is(.dark .dark\:border-slate-700\/10) {
+  border-color: rgb(51 65 85 / 0.1);
 }
 
 :is(.dark .dark\:bg-neutral-900) {
