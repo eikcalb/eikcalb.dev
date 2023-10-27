@@ -25,10 +25,10 @@ export const ProjectCard = ({
         {!experimental ? (
           <span
             title="Team size refers to the count of people who participated in working on this project that I am aware of. It doesn't take into account past contributors or future contributors."
-            className="inline-flex border border-sky-400/20 dark:border-none bg-sky-100 dark:bg-sky-100 text-slate-900 rounded-full uppercase px-3 sm:px-1 py-1 text-sm items-center"
+            className="inline-flex border border-sky-400/20 dark:border-none bg-sky-100 dark:bg-sky-100 text-slate-900 rounded-full uppercase px-3 sm:px-1 py-1 text-xs items-center"
           >
             <span className="me-2 font-bold text-xs/4 px-3 py-2 bg-cyan-500 dark:bg-slate-900 text-slate-100 dark:text-slate-300 rounded-full items-center hidden sm:flex">
-              Team size
+              Team
             </span>
             <span className="sm:me-3 font-semibold">{teamSize}</span>
           </span>
@@ -58,7 +58,7 @@ export const Section = ({ title, description, items }) => {
         </p>
       </div>
 
-      <div className="columns-1 lg:columns-2 gap-12 space-y-20 pt-8">
+      <div className="columns-1 lg:columns-2 xl:columns-3 gap-12 space-y-20 pt-8">
         {(items || []).map((item, i) => (
           <ProjectCard key={title + item?.name ?? i} {...item} />
         ))}

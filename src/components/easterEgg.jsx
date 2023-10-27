@@ -112,7 +112,6 @@ export const EasterEgg = (props) => {
   });
 
   const pxAppRef = useRef();
-  const deviceMotionCaptured = useRef(false);
 
   const [enabled, setEnabled] = useReducer((state) => {
     return !state;
@@ -324,44 +323,6 @@ export const EasterEgg = (props) => {
     pxAppRef.current.render();
   };
 
-  const handleDeviceMotion = useCallback(
-    (event) => {
-      const acceleration = event.accelerationIncludingGravity;
-      const shakeThreshold = 200;
-      // Calculate the total acceleration vector
-      const totalAcceleration = Math.sqrt(
-        acceleration.x ** 2 + acceleration.y ** 2 + acceleration.z ** 2
-      );
-
-      if (totalAcceleration > shakeThreshold) {
-        if (agentStateRef.current.sprite && enabled) {
-          agentStateRef.current.nextStatus = "fall";
-        }
-      }
-    },
-    [enabled]
-  );
-
-  const setupMotionListener = useCallback(() => {
-    if ("DeviceMotionEvent" in window) {
-      if (DeviceMotionEvent.requestPermission) {
-        DeviceMotionEvent.requestPermission()
-          .then((permissionState) => {
-            if (permissionState === "granted") {
-              global.addEventListener("devicemotion", handleDeviceMotion);
-              deviceMotionCaptured.current = true;
-            }
-          })
-          .catch((error) => {
-            console.log("Error requesting permission:", error);
-          });
-      } else {
-        global.addEventListener("devicemotion", handleDeviceMotion);
-        deviceMotionCaptured.current = true;
-      }
-    }
-  }, [handleDeviceMotion]);
-
   useEffect(() => {
     if (!pxAppRef.current) {
       pxAppRef.current = new Application({
@@ -381,11 +342,8 @@ export const EasterEgg = (props) => {
       console.log("🏳️ Quadriple click activated!");
       setEnabled(!enabled);
     });
-    setupMotionListener();
 
     return () => {
-      global.removeEventListener("devicemotion", handleDeviceMotion);
-      deviceMotionCaptured.current = false;
       mc.off("quadrupletap");
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -427,16 +385,7 @@ export const EasterEgg = (props) => {
       }
     }
 
-    if (!deviceMotionCaptured.current) {
-      // On some devices, we can only request this permission after user interaction.
-      setupMotionListener();
-    }
-
-    return () => {
-      global.removeEventListener("devicemotion", handleDeviceMotion);
-      deviceMotionCaptured.current = false;
-    };
-  }, [enabled, handleDeviceMotion, pxAppRef, setupMotionListener]);
+  }, [enabled, pxAppRef]);
 
   return (
     <div>
