@@ -1,7 +1,5 @@
-import { useContext, useReducer } from "react";
+import { useContext } from "react";
 import { APPLICATION_CONTEXT } from "../lib/application";
-import { ToggleIconButton } from "./button";
-import { MdNightlight, MdSunny } from "react-icons/md";
 
 export const Skills = () => {
   const app = useContext(APPLICATION_CONTEXT);

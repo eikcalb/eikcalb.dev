@@ -22,7 +22,7 @@ const getIconForName = (name) => {
 
 export const Footer = () => {
   const app = useContext(APPLICATION_CONTEXT);
-  const [accepted, setAccepted] = useState(localStorage.cookieAccepted);
+  const [accepted, setAccepted] = useState(sessionStorage.cookieAccepted);
   const today = dayjs().year();
 
   return (
@@ -59,7 +59,7 @@ export const Footer = () => {
 
           <button
             onClick={() => {
-              localStorage.cookieAccepted = true;
+              sessionStorage.cookieAccepted = true;
               setAccepted(true);
             }}
             className="uppercase text-xs px-4 py-2 tracking-widest underline-offset-4 underline text-slate-200 dark:text-slate-800 hover:bg-sky-500/10 hover:no-underline rounded-full"
