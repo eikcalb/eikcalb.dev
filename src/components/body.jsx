@@ -22,7 +22,7 @@ export const ProjectCard = ({
         </p>
       </div>
       <div className="px-4 py-4 space-x-6 flex">
-        {!experimental ? (
+        {true || experimental ? null : (
           <span
             title="Team size refers to the count of people who participated in working on this project that I am aware of. It doesn't take into account past contributors or future contributors."
             className="inline-flex border border-sky-400/20 dark:border-none bg-sky-100 dark:bg-sky-100 text-slate-900 rounded-full uppercase px-3 sm:px-1 py-1 text-xs items-center"
@@ -32,7 +32,7 @@ export const ProjectCard = ({
             </span>
             <span className="sm:me-3 font-semibold">{teamSize}</span>
           </span>
-        ) : null}
+        )}
         <a
           target="_blank"
           rel="noreferrer"
