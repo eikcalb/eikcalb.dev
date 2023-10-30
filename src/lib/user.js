@@ -56,6 +56,14 @@ export const DEFAULT_USER = new User({
             teamSize: "<50",
             experimental: false,
         },
+        {
+            name: "CredBooth",
+            description: `I spearheaded the creation of a fundamental bill payment endpoint within CredBooth's digital framework, employing the NestJS framework for its development. This microservice played a vital role in ensuring secure and frictionless bill payments, in line with CredBooth's mission to offer inclusive financial services.`,
+            icon: `${process.env.PUBLIC_URL}/asset/chalktalk.png`,
+            link: "https://credbooth.com/",
+            teamSize: "<10",
+            experimental: false,
+        },
 
         // Personal projects
         {
@@ -121,6 +129,8 @@ export const DEFAULT_USER = new User({
         { name: "C#" },
         { name: "Celery" },
         { name: "Docker" },
+        { name: "Next.js" },
+        { name: "Nest.js" },
         { name: "Firebase" },
         { name: "D3.js" },
         { name: "Google Cloud Platform" },
