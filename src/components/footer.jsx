@@ -41,7 +41,7 @@ export const Footer = () => {
         ))}
       </div>
       <p className="text-sm text-gray-500 peer/author">
-        &copy; {app.author} {today}
+        &copy; {today} {app.author}
       </p>
 
       <p className="text-xs text-neutral-500">v{app.version}</p>
