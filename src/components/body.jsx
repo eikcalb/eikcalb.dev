@@ -58,7 +58,7 @@ export const Section = ({ title, description, items }) => {
         </p>
       </div>
 
-      <div className="columns-1 lg:columns-2 xl:columns-3 gap-12 space-y-20 pt-8">
+      <div className="grid items-stretch sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 space-y-20 pt-8">
         {(items || []).map((item, i) => (
           <ProjectCard key={title + item?.name ?? i} {...item} />
         ))}

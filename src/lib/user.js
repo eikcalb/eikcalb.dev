@@ -82,7 +82,7 @@ export const DEFAULT_USER = new User({
         },
         {
             name: "MetricsFetcher",
-            description: `This software is designed to monitor Windows computers for various metrics, utilizing the PQH API. The application collects real-time data on system performance, resource usage, and other relevant metrics. This data is then elegantly displayed to provide insights into computer health and performance. One notable feature is the integration of a JavaScript engine, allowing users to define and collect custom metrics to meet specific monitoring needs. The collected custom metrics are efficiently stored in an SQLite database, streamlining data management and accessibility. This software offers a holistic solution for in-depth system monitoring and custom metric tracking on Windows computers.`,
+            description: `This software is designed using C++ to monitor Windows computers for various metrics, utilizing the PDH API. The application collects real-time data on system performance, resource usage, and other relevant metrics. This data is then elegantly displayed to provide insights into computer health and performance. One notable feature is the integration of a JavaScript engine, allowing users to define and collect custom metrics to meet specific monitoring needs. The collected custom metrics are efficiently stored in an SQLite database, streamlining data management and accessibility. This software offers a holistic solution for in-depth system monitoring and custom metric tracking on Windows computers.`,
             icon: ``,
             link: "https://github.com/eikcalb/metricsfetcher",
             experimental: true,
