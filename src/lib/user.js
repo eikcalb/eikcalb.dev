@@ -143,6 +143,8 @@ export const DEFAULT_USER = new User({
         { name: "Python" },
         { name: "React" },
         { name: "React Native" },
+        { name: "Salesforce" },
+        { name: "Selenium" },
         { name: "SQLite" },
         { name: "Tailwind CSS" },
         { name: "TeamCity" },
