@@ -11,7 +11,7 @@ export class User {
 
 export const DEFAULT_USER = new User({
     bio: "I'm a Full Stack Developer. I use various frameworks to build advanced applications. I'm experienced with Agile methodologies, which help to manage projects efficiently. I'm skilled in multiple programming languages and always strive to create dynamic and user-friendly digital experiences.",
-    name: "Onome Israel Agwa",
+    name: process.env.REACT_APP_AUTHOR,
     hobbies: [],
     links: [
         {
