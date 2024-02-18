@@ -6,7 +6,13 @@ export const BlogCard = ({ name, icon, link }) => {
   return (
     <div className="w-full rounded-xl dark:border dark:border-slate-700/10 overflow-hidden shadow-lg dark:shadow-none hover:scale-95 transition-transform dark:bg-slate-800">
       {/* {icon ? <img className="h-36 object-center" src={icon} alt={name} /> : null} */}
-      {icon ? <div className="h-48 w-full bg-repeat bg-contain" style={{backgroundImage: `url('${icon}')`}} alt={name} ></div> : null}
+      {icon ? (
+        <div
+          className="h-48 w-full bg-repeat bg-contain"
+          style={{ backgroundImage: `url('${icon}')` }}
+          alt={name}
+        ></div>
+      ) : null}
       <div className="px-4 py-4 space-y-4">
         <a
           target="_blank"
@@ -33,11 +39,20 @@ export const BlogPosts = ({ title, description, items }) => {
         </p>
       </div>
 
-      <div className="grid items-stretch sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-8">
-        {(items || []).map((item, i) => (
-          <BlogCard key={title + item?.name ?? i} {...item} />
-        ))}
-      </div>
+      {items.length > 0 ? (
+        <div className="grid items-stretch sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-8">
+          {(items || []).map((item, i) => (
+            <BlogCard key={title + item?.name ?? i} {...item} />
+          ))}
+        </div>
+      ) : (
+        <div className="container p-8 flex flex-col space-y-8 items-center w-full justify-center">
+          <FaSadTear className="text-8xl text-slate-200 dark:text-slate-800" />
+          <p className="text-2xl text-slate-200 dark:text-slate-800">
+            Sorry, nothing to see here!
+          </p>
+        </div>
+      )}
     </div>
   );
 };
@@ -124,11 +139,6 @@ export const Body = () => {
     </div>
   ) : (
     <div className="space-y-12 mb-20">
-      <BlogPosts
-        title="Blog Posts"
-        description="This section contains posts I make related to technology I am fascinated about and experimenting on."
-        items={app.user.blogPosts}
-      />
       <Section
         title="Projects"
         description="These projects encompass real-world tasks and initiatives I've engaged in, either as integral components of my professional journey or through freelance opportunities. These assignments reflect my practical involvement in the field, showcasing the application of my skills and expertise."
@@ -138,6 +148,11 @@ export const Body = () => {
         title="Experiments"
         description="These refer to innovative undertakings and creative ventures I've initiated to explore emerging technologies, refine my skills, or pioneer novel solutions. These endeavors are my playground for testing new concepts and pushing the boundaries of web and mobile development, allowing me to stay at the forefront of the ever-evolving digital landscape."
         items={app.user.projects.filter((p) => p.experimental)}
+      />
+      <BlogPosts
+        title="Blog Posts"
+        description="This section contains posts I make related to technology I am fascinated about and experimenting on."
+        items={app.user.blogPosts}
       />
     </div>
   );

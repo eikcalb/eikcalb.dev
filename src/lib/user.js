@@ -11,7 +11,7 @@ export class User {
 }
 
 export const DEFAULT_USER = new User({
-    bio: "I'm a Software Engineer. I believe technology should be used in service of humanity to bring happpiness. I’ve always tried to do what’s right instead of what’s easy. Quality and innovation are integral to my pursuits.",
+    bio: "I'm a Software Engineer and I believe technology should be used in service of humanity to bring happpiness. I’ve always tried to do what’s right instead of what’s easy. Quality and innovation are integral to my pursuits.",
     name: process.env.REACT_APP_AUTHOR,
     hobbies: [],
     links: [
