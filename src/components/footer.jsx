@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { APPLICATION_CONTEXT } from "../lib/application";
 import dayjs from "dayjs";
 import { FaEnvelope, FaGithub, FaGlobeAfrica } from "react-icons/fa";
+import { SiSubstack } from "react-icons/si";
 
 const getIconForName = (name) => {
   switch (name) {
@@ -12,6 +13,10 @@ const getIconForName = (name) => {
     case "email":
       return (
         <FaEnvelope className="transition-all text-3xl lg:text-2xl hover:scale-125 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100" />
+      );
+    case "substack":
+      return (
+        <SiSubstack className="transition-all text-3xl lg:text-2xl hover:scale-125 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100" />
       );
     default:
       return (

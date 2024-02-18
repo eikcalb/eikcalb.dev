@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { createContext, useState } from "react";
 import { Loading } from "../components/loading";
 import { DEFAULT_USER } from "./user";
+import packageJSON from '../../package.json'
 
 /**
  * This application provides a portfolio page for the user specified.
@@ -29,7 +30,7 @@ class Application {
 
     constructor(name, version) {
         this.name = name ?? process.env.REACT_APP_NAME;
-        this.version = version ?? process.env.REACT_APP_VERSION;
+        this.version = version ?? packageJSON.version;
 
         this.initialize();
         logEvent(this.fBaseAnalytics, "page_view", {

@@ -1,6 +1,7 @@
 export class User {
-    constructor({ bio, name, hobbies, links, projects, skills }) {
+    constructor({ bio, blogPosts, name, hobbies, links, projects, skills }) {
         this.bio = bio;
+        this.blogPosts = blogPosts;
         this.name = name;
         this.hobbies = hobbies;
         this.links = links;
@@ -10,18 +11,25 @@ export class User {
 }
 
 export const DEFAULT_USER = new User({
-    bio: "I'm a Full Stack Developer. I use various frameworks to build advanced applications. I'm experienced with Agile methodologies, which help to manage projects efficiently. I'm skilled in multiple programming languages and always strive to create dynamic and user-friendly digital experiences.",
+    bio: "I'm a Software Engineer. I believe technology should be used in service of humanity to bring happpiness. I’ve always tried to do what’s right instead of what’s easy. Quality and innovation are integral to my pursuits.",
     name: process.env.REACT_APP_AUTHOR,
     hobbies: [],
     links: [
+        {
+            name: "email",
+            href: `mailto:${process.env.REACT_APP_EMAIL}`,
+        },
         {
             name: "github",
             href: "https://github.com/eikcalb",
         },
         {
-            name: "email",
-            href: `mailto:${process.env.REACT_APP_EMAIL}`,
+            name: "substack",
+            href: "https://eikcalb.substack.com",
         },
+    ],
+    blogPosts: [
+
     ],
     projects: [
         {
@@ -82,7 +90,7 @@ export const DEFAULT_USER = new User({
         },
         {
             name: "MetricsFetcher",
-            description: `This software is designed using C++ to monitor Windows computers for various metrics, utilizing the PDH API. The application collects real-time data on system performance, resource usage, and other relevant metrics. This data is then elegantly displayed to provide insights into computer health and performance. One notable feature is the integration of a JavaScript engine, allowing users to define and collect custom metrics to meet specific monitoring needs. The collected custom metrics are efficiently stored in an SQLite database, streamlining data management and accessibility. This software offers a holistic solution for in-depth system monitoring and custom metric tracking on Windows computers.`,
+            description: `This software is designed using C++ to monitor Windows computers for various metrics, utilizing the PDH API. The application collects real-time data on system performance, resource usage, and other relevant metrics. This data is then elegantly displayed to provide insights into computer health and performance. One notable feature is the integration of a JavaScript engine, allowing users to define and collect custom metrics to meet specific monitoring needs. The collected custom metrics are efficiently stored in an SQLite database, streamlining data management and accessibility. This software offers a holistic solution for in-depth system monitoring and custom metric tracking on Windows computers. While running, it makes periodic prediction of the current computer state and warns the user if a component is being overused.`,
             icon: ``,
             link: "https://github.com/eikcalb/metricsfetcher",
             experimental: true,
