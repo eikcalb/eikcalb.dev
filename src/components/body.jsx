@@ -139,6 +139,11 @@ export const Body = () => {
     </div>
   ) : (
     <div className="space-y-12 mb-20">
+      <BlogPosts
+        title="Blog Posts"
+        description="This section contains posts I make related to technology I am fascinated about and experimenting on. It's an opportunity to jot down my discovery process and progress in learning."
+        items={app.user.blogPosts}
+      />
       <Section
         title="Projects"
         description="These projects encompass real-world tasks and initiatives I've engaged in, either as integral components of my professional journey or through freelance opportunities. These assignments reflect my practical involvement in the field, showcasing the application of my skills and expertise."
@@ -148,11 +153,6 @@ export const Body = () => {
         title="Experiments"
         description="These refer to innovative undertakings and creative ventures I've initiated to explore emerging technologies, refine my skills, or pioneer novel solutions. These endeavors are my playground for testing new concepts and pushing the boundaries of web and mobile development, allowing me to stay at the forefront of the ever-evolving digital landscape."
         items={app.user.projects.filter((p) => p.experimental)}
-      />
-      <BlogPosts
-        title="Blog Posts"
-        description="This section contains posts I make related to technology I am fascinated about and experimenting on."
-        items={app.user.blogPosts}
       />
     </div>
   );

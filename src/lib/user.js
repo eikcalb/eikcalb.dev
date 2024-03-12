@@ -29,7 +29,11 @@ export const DEFAULT_USER = new User({
         },
     ],
     blogPosts: [
-
+        {
+            name: "Integrating JavaScript into a C++ Application using Duktape",
+            icon: `${process.env.PUBLIC_URL}/asset/blog/duktape.png`,
+            link: "https://eikcalb.substack.com/p/integrating-javascript-into-a-c-application?r=1mieb&utm_campaign=post&utm_medium=web",
+        },
     ],
     projects: [
         {
