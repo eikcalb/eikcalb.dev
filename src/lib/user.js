@@ -134,7 +134,7 @@ export const DEFAULT_USER = new User({
         {
             name: "Vox",
             description: `Vox is a 3D multiplayer canvas game built using C++ and it is based on a game engine developed as part of this project. It currently supports DirectX.`,
-            link: "https://github.com/eikcalb/keypairgen",
+            link: "https://github.com/eikcalb/CanvasEngine",
             experimental: true,
         },
     ],
