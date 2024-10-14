@@ -66,13 +66,13 @@ export const ProjectCard = ({
   experimental,
 }) => {
   return (
-    <div className="w-full rounded-xl dark:border dark:border-slate-700/10 overflow-hidden shadow-lg dark:shadow-none hover:scale-95 transition-transform dark:bg-slate-800">
-      {icon ? <img className="w-full" src={icon} alt={name} /> : null}
-      <div className="px-4 py-4 space-y-4">
+    <div className="group transition-all w-full rounded-xl dark:border dark:border-slate-700/10 shadow-lg dark:shadow-none hover:scale-105 dark:bg-slate-800 flex flex-col overflow-hidden">
+      {icon ? <img className="w-full h-0 group-hover:h-full" src={icon} alt={name} /> : null}
+      <div className="px-4 py-4 space-y-4 flex-1 w-full">
         <div className="text-slate-800 dark:text-slate-200 font-bold text-xl">
           {name}
         </div>
-        <p className="text-slate-700 dark:text-neutral-300 text-base">
+        <p className="text-slate-700 dark:text-neutral-300 line-clamp-4 group-hover:line-clamp-none text-base text-ellipsis w-[calc(100%)]">
           {description}
         </p>
       </div>
@@ -113,7 +113,7 @@ export const Section = ({ title, description, items }) => {
         </p>
       </div>
 
-      <div className="grid items-stretch sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-8">
+      <div className="grid items-start sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-8">
         {(items || []).map((item, i) => (
           <ProjectCard key={title + item?.name ?? i} {...item} />
         ))}

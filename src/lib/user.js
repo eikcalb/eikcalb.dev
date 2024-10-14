@@ -156,6 +156,7 @@ export const DEFAULT_USER = new User({
         { name: "Google Cloud Platform" },
         { name: "GraphQL" },
         { name: "Golang" },
+        { name: "Java" },
         { name: "JavaScript" },
         { name: "Jenkins" },
         { name: "MongoDB" },
