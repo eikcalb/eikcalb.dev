@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FaSadTear } from "react-icons/fa";
 import { APPLICATION_CONTEXT } from "../lib/application";
+import { Modal } from "./modal";
 
 export const BlogCard = ({ name, icon, link }) => {
   return (
@@ -65,39 +66,90 @@ export const ProjectCard = ({
   teamSize,
   experimental,
 }) => {
+  const [open, setOpen] = useState(false);
+
+  const teamBadge =
+    true || experimental ? null : (
+      <span
+        title="Team size refers to the count of people who participated in working on this project that I am aware of. It doesn't take into account past contributors or future contributors."
+        className="inline-flex border border-sky-400/20 dark:border-none bg-sky-100 dark:bg-sky-100 text-slate-900 rounded-full uppercase px-3 sm:px-1 py-1 text-xs items-center"
+      >
+        <span className="me-2 font-bold text-xs/4 px-3 py-2 bg-cyan-500 dark:bg-slate-900 text-slate-100 dark:text-slate-300 rounded-full items-center hidden sm:flex">
+          Team
+        </span>
+        <span className="sm:me-3 font-semibold">{teamSize}</span>
+      </span>
+    );
+
   return (
-    <div className="group transition-all w-full rounded-xl dark:border dark:border-slate-700/10 shadow-lg dark:shadow-none hover:scale-105 dark:bg-slate-800 flex flex-col overflow-hidden">
-      {icon ? <img className="w-full h-0 group-hover:h-full" src={icon} alt={name} /> : null}
-      <div className="px-4 py-4 space-y-4 flex-1 w-full">
-        <div className="text-slate-800 dark:text-slate-200 font-bold text-xl">
-          {name}
+    <>
+      <div
+        role="button"
+        tabIndex={0}
+        title={description}
+        onClick={() => setOpen(true)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setOpen(true);
+          }
+        }}
+        className="cursor-pointer transition-all w-full h-full rounded-xl dark:border dark:border-slate-700/10 shadow-lg dark:shadow-none hover:scale-105 dark:bg-slate-800 flex flex-col overflow-hidden"
+      >
+        <div className="h-40 w-full flex-shrink-0 bg-slate-100 dark:bg-slate-700">
+          {icon ? (
+            <img className="h-full w-full object-cover" src={icon} alt={name} />
+          ) : null}
         </div>
-        <p className="text-slate-700 dark:text-neutral-300 line-clamp-4 group-hover:line-clamp-none text-base text-ellipsis w-[calc(100%)]">
-          {description}
-        </p>
-      </div>
-      <div className="px-4 py-4 space-x-6 flex">
-        {true || experimental ? null : (
-          <span
-            title="Team size refers to the count of people who participated in working on this project that I am aware of. It doesn't take into account past contributors or future contributors."
-            className="inline-flex border border-sky-400/20 dark:border-none bg-sky-100 dark:bg-sky-100 text-slate-900 rounded-full uppercase px-3 sm:px-1 py-1 text-xs items-center"
+        <div className="px-4 py-4 space-y-4 flex-1 w-full">
+          <div className="text-slate-800 dark:text-slate-200 font-bold text-xl line-clamp-2 min-h-14">
+            {name}
+          </div>
+          <p className="text-slate-700 dark:text-neutral-300 line-clamp-4 text-base text-ellipsis w-full min-h-24">
+            {description}
+          </p>
+        </div>
+        <div className="px-4 py-4 space-x-6 flex">
+          {teamBadge}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={link}
+            onClick={(e) => e.stopPropagation()}
+            className="inline-flex hover:bg-neutral-50 text-slate-100 hover:text-slate-800 bg-cyan-600 dark:bg-neutral-900 dark:hover:bg-neutral-50 hover:border-neutral-900 hover:border dark:hover:border-none items-center rounded-full uppercase px-3 py-2 text-sm font-bold"
           >
-            <span className="me-2 font-bold text-xs/4 px-3 py-2 bg-cyan-500 dark:bg-slate-900 text-slate-100 dark:text-slate-300 rounded-full items-center hidden sm:flex">
-              Team
-            </span>
-            <span className="sm:me-3 font-semibold">{teamSize}</span>
-          </span>
-        )}
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href={link}
-          className="inline-flex hover:bg-neutral-50 text-slate-100 hover:text-slate-800 bg-cyan-600 dark:bg-neutral-900 dark:hover:bg-neutral-50 hover:border-neutral-900 hover:border dark:hover:border-none items-center rounded-full uppercase px-3 py-2 text-sm font-bold"
-        >
-          View Project
-        </a>
+            View Project
+          </a>
+        </div>
       </div>
-    </div>
+
+      <Modal open={open} onClose={() => setOpen(false)}>
+        <div className="flex max-h-[85vh] flex-col overflow-y-auto">
+          {icon ? (
+            <img className="w-full max-h-64 object-cover" src={icon} alt={name} />
+          ) : null}
+          <div className="space-y-4 p-6">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+              {name}
+            </h3>
+            <p className="text-base leading-relaxed text-slate-700 dark:text-neutral-300">
+              {description}
+            </p>
+            <div className="flex items-center gap-4 pt-2">
+              {teamBadge}
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={link}
+                className="inline-flex hover:bg-neutral-50 text-slate-100 hover:text-slate-800 bg-cyan-600 dark:bg-neutral-900 dark:hover:bg-neutral-50 hover:border-neutral-900 hover:border dark:hover:border-none items-center rounded-full uppercase px-3 py-2 text-sm font-bold"
+              >
+                View Project
+              </a>
+            </div>
+          </div>
+        </div>
+      </Modal>
+    </>
   );
 };
 
@@ -113,7 +165,7 @@ export const Section = ({ title, description, items }) => {
         </p>
       </div>
 
-      <div className="grid items-start sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-8">
+      <div className="grid items-stretch sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-8">
         {(items || []).map((item, i) => (
           <ProjectCard key={title + item?.name ?? i} {...item} />
         ))}
