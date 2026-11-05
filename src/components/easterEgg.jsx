@@ -6,72 +6,72 @@ import { APPLICATION_CONTEXT } from "../lib/application";
 
 const RACCOON = {
   fall: {
-    fall0: `${process.env.PUBLIC_URL}/asset/raccoon/ko/ko0000.png`,
-    fall1: `${process.env.PUBLIC_URL}/asset/raccoon/ko/ko0002.png`,
-    fall2: `${process.env.PUBLIC_URL}/asset/raccoon/ko/ko0004.png`,
-    fall3: `${process.env.PUBLIC_URL}/asset/raccoon/ko/ko0006.png`,
-    fall4: `${process.env.PUBLIC_URL}/asset/raccoon/ko/ko0008.png`,
-    fall5: `${process.env.PUBLIC_URL}/asset/raccoon/ko/ko0010.png`,
-    fall6: `${process.env.PUBLIC_URL}/asset/raccoon/ko/ko0012.png`,
-    fall7: `${process.env.PUBLIC_URL}/asset/raccoon/ko/ko0014.png`,
-    fall8: `${process.env.PUBLIC_URL}/asset/raccoon/ko/ko0016.png`,
-    fall9: `${process.env.PUBLIC_URL}/asset/raccoon/ko/ko0018.png`,
+    fall0: `${import.meta.env.BASE_URL}asset/raccoon/ko/ko0000.png`,
+    fall1: `${import.meta.env.BASE_URL}asset/raccoon/ko/ko0002.png`,
+    fall2: `${import.meta.env.BASE_URL}asset/raccoon/ko/ko0004.png`,
+    fall3: `${import.meta.env.BASE_URL}asset/raccoon/ko/ko0006.png`,
+    fall4: `${import.meta.env.BASE_URL}asset/raccoon/ko/ko0008.png`,
+    fall5: `${import.meta.env.BASE_URL}asset/raccoon/ko/ko0010.png`,
+    fall6: `${import.meta.env.BASE_URL}asset/raccoon/ko/ko0012.png`,
+    fall7: `${import.meta.env.BASE_URL}asset/raccoon/ko/ko0014.png`,
+    fall8: `${import.meta.env.BASE_URL}asset/raccoon/ko/ko0016.png`,
+    fall9: `${import.meta.env.BASE_URL}asset/raccoon/ko/ko0018.png`,
   },
   idle: {
-    idle0: `${process.env.PUBLIC_URL}/asset/raccoon/idle/0001.png`,
-    idle1: `${process.env.PUBLIC_URL}/asset/raccoon/idle/0003.png`,
-    idle2: `${process.env.PUBLIC_URL}/asset/raccoon/idle/0005.png`,
-    idle3: `${process.env.PUBLIC_URL}/asset/raccoon/idle/0007.png`,
-    idle4: `${process.env.PUBLIC_URL}/asset/raccoon/idle/0009.png`,
-    idle5: `${process.env.PUBLIC_URL}/asset/raccoon/idle/0011.png`,
-    idle6: `${process.env.PUBLIC_URL}/asset/raccoon/idle/0013.png`,
-    idle7: `${process.env.PUBLIC_URL}/asset/raccoon/idle/0015.png`,
-    idle8: `${process.env.PUBLIC_URL}/asset/raccoon/idle/0017.png`,
-    idle9: `${process.env.PUBLIC_URL}/asset/raccoon/idle/0019.png`,
-    idle10: `${process.env.PUBLIC_URL}/asset/raccoon/idle/0021.png`,
+    idle0: `${import.meta.env.BASE_URL}asset/raccoon/idle/0001.png`,
+    idle1: `${import.meta.env.BASE_URL}asset/raccoon/idle/0003.png`,
+    idle2: `${import.meta.env.BASE_URL}asset/raccoon/idle/0005.png`,
+    idle3: `${import.meta.env.BASE_URL}asset/raccoon/idle/0007.png`,
+    idle4: `${import.meta.env.BASE_URL}asset/raccoon/idle/0009.png`,
+    idle5: `${import.meta.env.BASE_URL}asset/raccoon/idle/0011.png`,
+    idle6: `${import.meta.env.BASE_URL}asset/raccoon/idle/0013.png`,
+    idle7: `${import.meta.env.BASE_URL}asset/raccoon/idle/0015.png`,
+    idle8: `${import.meta.env.BASE_URL}asset/raccoon/idle/0017.png`,
+    idle9: `${import.meta.env.BASE_URL}asset/raccoon/idle/0019.png`,
+    idle10: `${import.meta.env.BASE_URL}asset/raccoon/idle/0021.png`,
   },
   dance: {
-    dance0: `${process.env.PUBLIC_URL}/asset/raccoon/victory-dance/victory-dance0001.png`,
-    dance1: `${process.env.PUBLIC_URL}/asset/raccoon/victory-dance/victory-dance0003.png`,
-    dance2: `${process.env.PUBLIC_URL}/asset/raccoon/victory-dance/victory-dance0005.png`,
-    dance3: `${process.env.PUBLIC_URL}/asset/raccoon/victory-dance/victory-dance0007.png`,
-    dance4: `${process.env.PUBLIC_URL}/asset/raccoon/victory-dance/victory-dance0009.png`,
-    dance5: `${process.env.PUBLIC_URL}/asset/raccoon/victory-dance/victory-dance0011.png`,
-    dance6: `${process.env.PUBLIC_URL}/asset/raccoon/victory-dance/victory-dance0013.png`,
-    dance7: `${process.env.PUBLIC_URL}/asset/raccoon/victory-dance/victory-dance0015.png`,
-    dance8: `${process.env.PUBLIC_URL}/asset/raccoon/victory-dance/victory-dance0017.png`,
-    dance9: `${process.env.PUBLIC_URL}/asset/raccoon/victory-dance/victory-dance0019.png`,
-    dance10: `${process.env.PUBLIC_URL}/asset/raccoon/victory-dance/victory-dance0021.png`,
-    dance11: `${process.env.PUBLIC_URL}/asset/raccoon/victory-dance/victory-dance0023.png`,
-    dance12: `${process.env.PUBLIC_URL}/asset/raccoon/victory-dance/victory-dance0025.png`,
-    dance13: `${process.env.PUBLIC_URL}/asset/raccoon/victory-dance/victory-dance0027.png`,
+    dance0: `${import.meta.env.BASE_URL}asset/raccoon/victory-dance/victory-dance0001.png`,
+    dance1: `${import.meta.env.BASE_URL}asset/raccoon/victory-dance/victory-dance0003.png`,
+    dance2: `${import.meta.env.BASE_URL}asset/raccoon/victory-dance/victory-dance0005.png`,
+    dance3: `${import.meta.env.BASE_URL}asset/raccoon/victory-dance/victory-dance0007.png`,
+    dance4: `${import.meta.env.BASE_URL}asset/raccoon/victory-dance/victory-dance0009.png`,
+    dance5: `${import.meta.env.BASE_URL}asset/raccoon/victory-dance/victory-dance0011.png`,
+    dance6: `${import.meta.env.BASE_URL}asset/raccoon/victory-dance/victory-dance0013.png`,
+    dance7: `${import.meta.env.BASE_URL}asset/raccoon/victory-dance/victory-dance0015.png`,
+    dance8: `${import.meta.env.BASE_URL}asset/raccoon/victory-dance/victory-dance0017.png`,
+    dance9: `${import.meta.env.BASE_URL}asset/raccoon/victory-dance/victory-dance0019.png`,
+    dance10: `${import.meta.env.BASE_URL}asset/raccoon/victory-dance/victory-dance0021.png`,
+    dance11: `${import.meta.env.BASE_URL}asset/raccoon/victory-dance/victory-dance0023.png`,
+    dance12: `${import.meta.env.BASE_URL}asset/raccoon/victory-dance/victory-dance0025.png`,
+    dance13: `${import.meta.env.BASE_URL}asset/raccoon/victory-dance/victory-dance0027.png`,
   },
   run: {
-    run0: `${process.env.PUBLIC_URL}/asset/raccoon/run/run0001.png`,
-    run1: `${process.env.PUBLIC_URL}/asset/raccoon/run/run0003.png`,
-    run2: `${process.env.PUBLIC_URL}/asset/raccoon/run/run0005.png`,
-    run3: `${process.env.PUBLIC_URL}/asset/raccoon/run/run0007.png`,
-    run4: `${process.env.PUBLIC_URL}/asset/raccoon/run/run0009.png`,
-    run5: `${process.env.PUBLIC_URL}/asset/raccoon/run/run0011.png`,
-    run6: `${process.env.PUBLIC_URL}/asset/raccoon/run/run0013.png`,
-    run7: `${process.env.PUBLIC_URL}/asset/raccoon/run/run0015.png`,
-    run8: `${process.env.PUBLIC_URL}/asset/raccoon/run/run0017.png`,
-    run9: `${process.env.PUBLIC_URL}/asset/raccoon/run/run0019.png`,
-    run10: `${process.env.PUBLIC_URL}/asset/raccoon/run/run0021.png`,
-    run11: `${process.env.PUBLIC_URL}/asset/raccoon/run/run0023.png`,
+    run0: `${import.meta.env.BASE_URL}asset/raccoon/run/run0001.png`,
+    run1: `${import.meta.env.BASE_URL}asset/raccoon/run/run0003.png`,
+    run2: `${import.meta.env.BASE_URL}asset/raccoon/run/run0005.png`,
+    run3: `${import.meta.env.BASE_URL}asset/raccoon/run/run0007.png`,
+    run4: `${import.meta.env.BASE_URL}asset/raccoon/run/run0009.png`,
+    run5: `${import.meta.env.BASE_URL}asset/raccoon/run/run0011.png`,
+    run6: `${import.meta.env.BASE_URL}asset/raccoon/run/run0013.png`,
+    run7: `${import.meta.env.BASE_URL}asset/raccoon/run/run0015.png`,
+    run8: `${import.meta.env.BASE_URL}asset/raccoon/run/run0017.png`,
+    run9: `${import.meta.env.BASE_URL}asset/raccoon/run/run0019.png`,
+    run10: `${import.meta.env.BASE_URL}asset/raccoon/run/run0021.png`,
+    run11: `${import.meta.env.BASE_URL}asset/raccoon/run/run0023.png`,
   },
   walk: {
-    walk0: `${process.env.PUBLIC_URL}/asset/raccoon/walk/walk0001.png`,
-    walk1: `${process.env.PUBLIC_URL}/asset/raccoon/walk/walk0003.png`,
-    walk2: `${process.env.PUBLIC_URL}/asset/raccoon/walk/walk0005.png`,
-    walk3: `${process.env.PUBLIC_URL}/asset/raccoon/walk/walk0007.png`,
-    walk4: `${process.env.PUBLIC_URL}/asset/raccoon/walk/walk0009.png`,
-    walk5: `${process.env.PUBLIC_URL}/asset/raccoon/walk/walk0011.png`,
-    walk6: `${process.env.PUBLIC_URL}/asset/raccoon/walk/walk0013.png`,
-    walk7: `${process.env.PUBLIC_URL}/asset/raccoon/walk/walk0015.png`,
-    walk8: `${process.env.PUBLIC_URL}/asset/raccoon/walk/walk0017.png`,
-    walk9: `${process.env.PUBLIC_URL}/asset/raccoon/walk/walk0019.png`,
-    walk10: `${process.env.PUBLIC_URL}/asset/raccoon/walk/walk0021.png`,
+    walk0: `${import.meta.env.BASE_URL}asset/raccoon/walk/walk0001.png`,
+    walk1: `${import.meta.env.BASE_URL}asset/raccoon/walk/walk0003.png`,
+    walk2: `${import.meta.env.BASE_URL}asset/raccoon/walk/walk0005.png`,
+    walk3: `${import.meta.env.BASE_URL}asset/raccoon/walk/walk0007.png`,
+    walk4: `${import.meta.env.BASE_URL}asset/raccoon/walk/walk0009.png`,
+    walk5: `${import.meta.env.BASE_URL}asset/raccoon/walk/walk0011.png`,
+    walk6: `${import.meta.env.BASE_URL}asset/raccoon/walk/walk0013.png`,
+    walk7: `${import.meta.env.BASE_URL}asset/raccoon/walk/walk0015.png`,
+    walk8: `${import.meta.env.BASE_URL}asset/raccoon/walk/walk0017.png`,
+    walk9: `${import.meta.env.BASE_URL}asset/raccoon/walk/walk0019.png`,
+    walk10: `${import.meta.env.BASE_URL}asset/raccoon/walk/walk0021.png`,
   },
 };
 // Load textures
@@ -84,7 +84,7 @@ Assets.addBundle("walk", RACCOON.walk);
 var mc = new Manager(document.body);
 
 const scaleFactor =
-  Math.min(global.innerWidth / 800, global.innerHeight / 800) * 0.32;
+  Math.min(window.innerWidth / 800, window.innerHeight / 800) * 0.32;
 
 /**
  * Please 🥺 do not judge me. I know it's rough. This is my first time using
@@ -178,7 +178,7 @@ export const EasterEgg = (props) => {
       );
 
       agentStateRef.current.sprite.x = 100;
-      agentStateRef.current.sprite.y = global.innerHeight / 2;
+      agentStateRef.current.sprite.y = window.innerHeight / 2;
       agentStateRef.current.sprite.cursor = "pointer";
       agentStateRef.current.sprite.scale.set(scaleFactor);
       agentStateRef.current.sprite.anchor.set(0.5);
@@ -270,8 +270,8 @@ export const EasterEgg = (props) => {
             agentStateRef.current.sprite.scale.x = Math.abs(
               agentStateRef.current.sprite.scale.x
             );
-          } else if (agentStateRef.current.sprite.x > global.innerWidth - 20) {
-            agentStateRef.current.sprite.x = global.innerWidth - 20;
+          } else if (agentStateRef.current.sprite.x > window.innerWidth - 20) {
+            agentStateRef.current.sprite.x = window.innerWidth - 20;
             agentStateRef.current.direction = -1;
             agentStateRef.current.sprite.scale.x = -Math.abs(
               agentStateRef.current.sprite.scale.x
@@ -291,8 +291,8 @@ export const EasterEgg = (props) => {
             agentStateRef.current.sprite.scale.x = Math.abs(
               agentStateRef.current.sprite.scale.x
             );
-          } else if (agentStateRef.current.sprite.x > global.innerWidth - 20) {
-            agentStateRef.current.sprite.x = global.innerWidth - 20;
+          } else if (agentStateRef.current.sprite.x > window.innerWidth - 20) {
+            agentStateRef.current.sprite.x = window.innerWidth - 20;
             agentStateRef.current.direction = -1;
             agentStateRef.current.sprite.scale.x = -Math.abs(
               agentStateRef.current.sprite.scale.x
@@ -308,8 +308,8 @@ export const EasterEgg = (props) => {
             agentStateRef.current.sprite.scale.x = Math.abs(
               agentStateRef.current.sprite.scale.x
             );
-          } else if (agentStateRef.current.sprite.x > global.innerWidth - 20) {
-            agentStateRef.current.sprite.x = global.innerWidth - 20;
+          } else if (agentStateRef.current.sprite.x > window.innerWidth - 20) {
+            agentStateRef.current.sprite.x = window.innerWidth - 20;
             agentStateRef.current.direction = -1;
             agentStateRef.current.sprite.scale.x = -Math.abs(
               agentStateRef.current.sprite.scale.x
@@ -328,10 +328,10 @@ export const EasterEgg = (props) => {
       pxAppRef.current = new Application({
         autoDensity: true,
         backgroundAlpha: 0,
-        resizeTo: global.window,
-        resolution: global.devicePixelRatio * 2,
-        height: global.innerHeight,
-        width: global.innerWidth,
+        resizeTo: window,
+        resolution: window.devicePixelRatio * 2,
+        height: window.innerHeight,
+        width: window.innerWidth,
         sharedTicker: true,
       });
       setupPixi();
@@ -398,7 +398,7 @@ export const EasterEgg = (props) => {
         controls={false}
       >
         <source
-          src={`${process.env.PUBLIC_URL}/asset/background.mp3`}
+          src={`${import.meta.env.BASE_URL}asset/background.mp3`}
           type="audio/mp3"
         />
         Your browser does not support the audio element.

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f8fafc"/>
+
+  <meta name="description" content="%VITE_DESCRIPTION%" />
+  <link rel="apple-touch-icon" href="/logo152.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <title>%VITE_NAME%</title>
+  <script type="text/javascript">
+    // This is to prevent FOUC. Application logic will include a listener for this.
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
+</head>
+
+<body class="flex overscroll-none overflow-hidden h-full bg-slate-50 dark:bg-slate-950">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root" class="flex flex-1 flex-col overflow-auto transition-all"></div>
+  <script type="module" src="/src/index.jsx"></script>
+</body>
+
+</html>

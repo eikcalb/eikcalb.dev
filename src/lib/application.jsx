@@ -12,29 +12,29 @@ import packageJSON from '../../package.json'
  */
 class Application {
     static firebaseConfig = {
-        apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-        authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-        projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-        storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-        messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-        appId: process.env.REACT_APP_FIREBASE_APP_ID,
-        measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
+        apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+        authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+        projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+        storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+        messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+        appId: import.meta.env.VITE_FIREBASE_APP_ID,
+        measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
     };
 
-    author = process.env.REACT_APP_AUTHOR;
-    authorEmail = process.env.REACT_APP_EMAIL;
+    author = import.meta.env.VITE_AUTHOR;
+    authorEmail = import.meta.env.VITE_EMAIL;
     user;
 
     // Public methods
     SetLoading = (loading) => {};
 
     constructor(name, version) {
-        this.name = name ?? process.env.REACT_APP_NAME;
+        this.name = name ?? import.meta.env.VITE_NAME;
         this.version = version ?? packageJSON.version;
 
         this.initialize();
         logEvent(this.fBaseAnalytics, "page_view", {
-            page_location: global.location.href,
+            page_location: window.location.href,
         });
     }
 
@@ -63,7 +63,7 @@ class Application {
     }
 
     updateBrowserThemeColor(dark = true) {
-        const meta = global.document.querySelector('meta[name="theme-color"]');
+        const meta = window.document.querySelector('meta[name="theme-color"]');
         if (meta) {
             meta.setAttribute("content", dark ? "#020617" : "#f8fafc");
         }
