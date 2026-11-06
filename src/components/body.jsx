@@ -94,7 +94,7 @@ export const ProjectCard = ({
             setOpen(true);
           }
         }}
-        className="cursor-pointer transition-all w-full h-full rounded-xl dark:border dark:border-slate-700/10 shadow-lg dark:shadow-none hover:scale-105 dark:bg-slate-800 flex flex-col overflow-hidden"
+        className="cursor-pointer transition-all w-full h-full rounded-xl dark:border dark:border-slate-700/10 shadow-lg dark:shadow-none hover:scale-95 dark:bg-slate-800 flex flex-col overflow-hidden"
       >
         <div className="h-40 w-full flex-shrink-0 bg-slate-100 dark:bg-slate-700">
           {icon ? (

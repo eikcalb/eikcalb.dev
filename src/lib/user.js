@@ -11,7 +11,7 @@ export class User {
 }
 
 export const DEFAULT_USER = new User({
-    bio: "I'm a Senior Software Engineer who enjoys turning gnarly, large-scale problems (distributed systems, event-driven architectures, cloud infrastructure) into software that's simple to use and reason about. Outside of client work, I'm endlessly curious about how things are designed, whether that's a new bridge, a cryptographic protocol, or the architecture behind a system handling millions of requests a day. I’ve always tried to do what’s right instead of what’s easy. Quality and innovation are integral to my pursuits.",
+    bio: "I enjoy turning gnarly, large-scale problems (distributed systems, event-driven architectures, cloud infrastructure) into software that's simple to use and reason about. I'm endlessly curious about how things are designed, whether that's a new bridge, a cryptographic protocol, a new car, or general architecture. I’ve always tried to do what’s right instead of what’s easy. Quality and innovation are integral to my pursuits.",
     name: import.meta.env.VITE_AUTHOR,
     hobbies: [],
     links: [
