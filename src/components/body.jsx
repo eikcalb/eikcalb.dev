@@ -5,7 +5,7 @@ import { Modal } from "./modal";
 
 export const BlogCard = ({ name, icon, link }) => {
   return (
-    <div className="w-full rounded-xl dark:border dark:border-slate-700/10 overflow-hidden shadow-lg dark:shadow-none hover:scale-95 transition-transform dark:bg-slate-800">
+    <div className="w-full rounded-xl dark:border dark:border-slate-700/10 overflow-hidden shadow-md dark:shadow-none hover:scale-95 transition-transform dark:bg-slate-800">
       {/* {icon ? <img className="h-36 object-center" src={icon} alt={name} /> : null} */}
       {icon ? (
         <div
@@ -94,7 +94,7 @@ export const ProjectCard = ({
             setOpen(true);
           }
         }}
-        className="cursor-pointer transition-all w-full h-full rounded-xl dark:border dark:border-slate-700/10 shadow-lg dark:shadow-none hover:scale-95 dark:bg-slate-800 flex flex-col overflow-hidden"
+        className="cursor-pointer transition-all w-full h-full rounded-xl dark:border dark:border-slate-700/10 shadow-md dark:shadow-none hover:scale-95 dark:bg-slate-800 flex flex-col overflow-hidden"
       >
         <div className="h-40 w-full flex-shrink-0 bg-slate-100 dark:bg-slate-700">
           {icon ? (
